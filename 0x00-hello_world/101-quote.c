@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 /**
  * main -Aptogram that prints line to standard e
