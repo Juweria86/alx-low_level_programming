@@ -18,9 +18,13 @@ int main(void)
 	{
 		printf(n, "is zero\n")
 	}
-	else
+	else if (n < 0)
 	{
 		printf(n, "is negative\n")
 	}
-	return (0);
+	else
+	{
+		return (0);
+
+
 }
