@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- *main -a program that computes and prints the sum of all the multiples of 3 or 5.
+ *main -a program that prints the sum of all the multiples of 3 or 5 < 1024.
  *Return: 0
  */
 int main(void)
@@ -18,4 +18,3 @@ int main(void)
 	printf("%d\n", sum);
 	return (0);
 }
-
