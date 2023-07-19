@@ -1,6 +1,6 @@
 #include <stdio.h>
 /**
- * main -prints the sum of even fionocci numbers
+ * main -prints the sum of even fibnocci numbers
  * less than 4000000.
  * Return: 0
  */
@@ -16,7 +16,7 @@ int main(void)
 		{
 			sum += k;
 			j = k - j;
-			++i;
+			i++;
 		}
 	}
 	printf("%ld\n", sum);
