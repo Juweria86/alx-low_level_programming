@@ -1,21 +1,21 @@
 #include "main.h"
  /**
-  * print_diagonal -draws a diagonal line.
+  * print_diagonal -prints backslash multiple times .
   * @n: input integer
   */
 void print_diagonal(int n)
 {
 	if (n <= 0)
 		_putchar('\n');
-	else
-	{
-		int i;
+	int i, j;
 
-		while (i <=  n)
+	for (i = 0; i < n; i++)
+	{
+		for (j = 0; j < i; j++)
 		{
-			_putchar('\');
-			i++;
+			_putchar(' ');
 		}
+		_putchar('\\');
 		_putchar('\n');
 	}
 }
