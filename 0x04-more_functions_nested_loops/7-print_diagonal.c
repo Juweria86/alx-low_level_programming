@@ -1,4 +1,4 @@
-#include "main.h"
+#include "main.h"
  /**
   * print_diagonal -prints backslash multiple times .
   * @n: input integer
