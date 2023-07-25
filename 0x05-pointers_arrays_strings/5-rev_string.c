@@ -3,15 +3,16 @@
  * rev_string -function that reverses a string.
  * @s: pointer
  */
-void rev_string(char *s) 
+void rev_string(char *s)
 {
 	char *p = s;
-	while (*p != '\0') 
+
+	while (*p != '\0')
 	{
 		p++;
 	}
 	p--;
-	while (s < p) 
+	while (s < p)
 	{
 		char temp = *s;
 		*s = *p;
