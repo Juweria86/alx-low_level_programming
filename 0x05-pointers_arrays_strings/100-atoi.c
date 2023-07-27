@@ -1,35 +1,34 @@
 #include "main.h"
 /**
- * _ato -function that converts a string to an integer
+ * _atoi -function that converts a string to an integer
  * @s: pointer
+ * Return: min
  */
-int _atoi(char *s) 
+int _atoi(char *s)
 {
-	int sign = 1;
-	int num = 0;
-	int digit;
+	int c = 0;
+	unsigned int ni = 0;
+	int min = 1;
+	int isis = 0;
 
-	while (*s != '\0') 
+	while (s[c])
 	{
-		if (*s == '-') 
+		if (s[c] == 45)
 		{
-			sign *= -1;
-			s++;
-		} 
-		else if (*s == '+')
-		{
-			sign *= 1;
-			s++;
+			min *= -1;
 		}
-		if (*s >= '0' && *s <= '9') 
+		while (s[c] >= 48 && s[c] <= 57)
 		{
-			digit = *s - '0';
-			num = num * 10 + digit;
-			s++;
+			isis = 1;
+			ni = (ni * 10) + s[c] - '0';
+			c++;
 		}
-		else 
+		if (isis == 1)
 		{
 			break;
 		}
+		c++;
 	}
+	ni *= min;
+	return (ni);
 }
