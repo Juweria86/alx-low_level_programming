@@ -2,18 +2,29 @@
 /**
  * cap_string -function that capitalizes all words of a string.
  * @str:pointer
+ * Return: str;
  */
 char *cap_string(char *str)
 {
-	char *p = str;
-	int cap_next = 1;  // Start by capitalizing the first letter
-	while (*p) {
-        if (cap_next && islower((unsigned char)*p)) {
-            *p = toupper((unsigned char)*p);
-        }
-        cap_next = isspace((unsigned char)*p) || *p == ',' || *p == ';' || *p == '.' || 
-		*p == '!' || *p == '?' || *p == '"' || *p == '(' || *p == ')' || *p == '{' || *p == '}';
-        p++;
-    }
-    return str;
+	int i = 0;
+	int capitalize_next = 1;
+
+	while (str[i] != '\0')
+	{
+		if (capitalize_next && str[i] >= 'a' && str[i] <= 'z')
+		{
+			str[i] -= 'a' - 'A';
+		}
+		capitalize_next = 0;
+		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
+				str[i] == ',' || str[i] == ';' || str[i] == '.' ||
+				str[i] == '!' || str[i] == '?' || str[i] == '"' ||
+				str[i] == '(' || str[i] == ')' || str[i] == '{' ||
+				str[i] == '}')
+		{
+			capitalize_next = 1;
+		}
+		i++;
+	}
+	return (str);
 }
