@@ -11,9 +11,9 @@ char *cap_string(char *str)
 
 	while (str[i] != '\0')
 	{
-		if (capitalize_next && str[i] >= 'a' && str[i] <= 'z')
+		if (capitalize_next && str[i] >= '97' && str[i] <= '122')
 		{
-			str[i] -= 'a' - 'A';
+			str[i] -= '97' - '65';
 		}
 		capitalize_next = 0;
 		if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
