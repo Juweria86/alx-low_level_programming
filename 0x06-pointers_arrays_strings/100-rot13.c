@@ -2,27 +2,27 @@
 /**
  * rot13 -function that encodes a string using rot13
  * @str: pointer
- * Return: result
+ * Return: ptr
  */
 char *rot13(char *str)
 {
-	static char result[256]; /* Allocate a static buffer for the result*/
 	int i;
 
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		char c = str[i];
+	char rot13[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	char rot13[] = "nopqrstuvvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
+	char *ptr = str;
 
-		if (c >= 'a' && c <= 'z')
+	while (*str)
+	{
+		for (i = 0; i <= 52; i++)
 		{
-			c = ((c - 'a' + 13) % 26) + 'a'; /* Apply ROT13 to lowercase letters*/
+			if (*str == rot13[i])
+			{
+				*str = rot13[i];
+				break;
+			}
 		}
-		else if (c >= 'A' && c <= 'Z')
-		{
-			c = ((c - 'A' + 13) % 26) + 'A'; /* Apply ROT13 to uppercase letters*/
-		}
-		result[i] = c;
+		str++;
 	}
-	result[i] = '\0';
-	return (result);
+	return (ptr);
 }
