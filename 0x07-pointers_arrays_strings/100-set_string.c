@@ -1,5 +1,6 @@
 #include "main.h"
-/** set_string -set the value of apointer to a char
+/**
+ * set_string -set the value of apointer to a char
  * @s: pointer  to pointer
  * @to: pointer to char
  */
