@@ -1,48 +1,46 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-/**
- * add_positive_numbers -adds positive numbers
- * @argc: integer
- * @argv: pointer
- * Return: result
- */
-int add_positive_numbers(int argc, char *argv[])
-{
-	int result = 0;
-	int i, j;
+#include <string.h>
 
-	for (i = 1; i < argc; i++)
-	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			if (!isdigit(argv[i][j]))
-			{
-				printf("Error\n");
-				return (1);
-			}
-		}
-		result += atoi(argv[i]);
-	}
-	return (result);
-}
 /**
- * main -checks program
- * @argc: integer
- * @argv: pointer
- * Return: 0
- */
+  * main - Prints the sum of args positive numbers
+  * @argc: argument count
+  * @argv: argument vector
+  *
+  * Return: Always zero
+  */
 int main(int argc, char *argv[])
 {
+	int i;
+	unsigned int k, sum = 0;
+	char *e;
+
 	if (argc > 1)
 	{
-		int sum_result = add_positive_numbers(argc, argv);
+		for (i = 1; i < argc; i++)
+		{
+			e = argv[i];
 
-		printf("%d\n", sum_result);
+			for (k = 0; k < strlen(e); k++)
+			{
+				if (e[k] < 48 || e[k] > 57)
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
+
+			sum += atoi(e);
+			e++;
+		}
+
+		printf("%d\n", sum);
 	}
 	else
 	{
 		printf("0\n");
 	}
+
 	return (0);
 }
