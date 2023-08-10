@@ -8,14 +8,21 @@
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	char *ptr;
+	unsigned char *byte_ptr;
+	unsigned int i, result;
+	void *ptr;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
 
-	ptr = malloc(size * sizeof(int));
+	ptr = malloc(nmemb * size);
 
-	if (ptr == NULL)
-		return (NULL);
+	if (ptr != NULL)
+	{
+		byte_ptr = (unsigned char *)ptr;
+		result = nmemb * size;
+		for (i = 0; i < result; i++)
+			byte_ptr[i] = 0;
+	}
 	return (ptr);
 }
