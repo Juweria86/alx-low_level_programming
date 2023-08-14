@@ -8,8 +8,8 @@ void print_dog(struct dog *d)
 {
 	if (d == NULL)
 		return;
-	else if (d == NULL)
-		printf("(nill)%s\n", d->name);
+	else if (d->name == NULL)
+		printf("Name: (nill) %s", d->name);
 
 	else if (d != NULL)
 	{
