@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """This module calculates perimeter of an island in a grid"""
+
+
 def island_perimeter(grid):
     """Return the perimiter of an island.
     Args:
@@ -26,5 +28,3 @@ def island_perimeter(grid):
                     perimeter -= 1
 
     return perimeter
-
-
